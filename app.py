@@ -21,7 +21,7 @@ def getData(ano = datetime.now().year, arrayDatas = None):
         datas.append(datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y'))
         feriados[' '.join(feriado.text.split())] = datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y')
 
-    if(xxxx):
+    if(arrayDatas):
         return datas
     return feriados
 
