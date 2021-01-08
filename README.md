@@ -1,17 +1,10 @@
-# Brasileirão Api
-Api com dados do Brasileirão
-https://brasileiraoapi.herokuapp.com
+# Feriados Brasil Api
+Api com os feriados nacionais
+https://feriadosbrasilapi.herokuapp.com/
 
-Serie A e B disponíveis.
+Endpoints Disponíveis:<br>
+/<br>
+/datas<br>
+/\<ano\><br>
+/\<ano\>/datas<br>
 
-Comandos Disponíveis:<br>
-/\<serie\><br>
-/\<serie\>/rodada<br>
-/\<serie\>/artilheiros<br>
-/\<serie\>/edicao<br>
-/\<serie\>/faixas_classificacao<br>
-/\<serie\>/fase<br>
-/\<serie\>/fases_navegacao<br>
-/\<serie\>/lista_jogos<br>
-/\<serie\>/rodada<br>
-/\<serie\>/rodada/\<n rodada\>
