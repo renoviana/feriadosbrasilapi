@@ -6,5 +6,5 @@ Endpoints Disponíveis:<br>
 /<br>
 /datas<br>
 /\<ano\><br>
-/\<ano\datas><br>
+/\<ano\>/datas><br>
 
