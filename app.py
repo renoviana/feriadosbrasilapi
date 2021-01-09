@@ -1,7 +1,6 @@
 import os
 from flask import Flask, jsonify, request, Response, redirect
 from flask_cors import CORS
-from classes import Brasileirao
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -18,18 +17,23 @@ def getData(ano = datetime.now().year, arrayDatas = None):
     datas = []
     for item in soup.find('table',{'class':'tabelaPadrao'}).find_all('tr')[1:]:
         data,dia,feriado = item.find_all('td')
-        datas.append(datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y'))
+        datas.append(datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y').date())
         feriados[' '.join(feriado.text.split())] = datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y')
 
     if(arrayDatas):
         return datas
     return feriados
 
-
+def isFeriado():
+    return datetime.now().date() in getData(arrayDatas=True)
 
 @app.route('/')
 def Hello():
     return jsonify(getData())
+
+@app.route('/feriado')
+def getFeriado():
+    return jsonify(isFeriado())
 
 @app.route('/datas')
 def getDatas():
