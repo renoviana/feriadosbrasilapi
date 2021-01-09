@@ -18,7 +18,7 @@ def getData(ano = datetime.now().year, arrayDatas = None):
     for item in soup.find('table',{'class':'tabelaPadrao'}).find_all('tr')[1:]:
         data,dia,feriado = item.find_all('td')
         datas.append(datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y').date())
-        feriados[' '.join(feriado.text.split())] = datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y')
+        feriados[' '.join(feriado.text.split())] = datetime.strptime(' '.join(data.text.split()), '%d/%m/%Y').date()
 
     if(arrayDatas):
         return datas
